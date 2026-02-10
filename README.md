@@ -50,7 +50,7 @@ It aims to make Arch more accessible and UX friendly for just casual users, by p
  3. ***Always read the files and make sure everything is correct and have fun***
  
  # Roadmap / Checklist
- <details>
+ <details open>
      <summary>DotFiles</summary>
   
   - [ ] hyprland
@@ -66,7 +66,7 @@ It aims to make Arch more accessible and UX friendly for just casual users, by p
   - [ ] swaync
  
  </details>
- <details>
+ <details open>
     <summary>OS (Arch) tweaks</summary>
   
   - [ ] GRUB menu
@@ -75,7 +75,7 @@ It aims to make Arch more accessible and UX friendly for just casual users, by p
   - [ ] Kernel optimizations
  
  </details>
- <details>
+ <details open>
      <summary>Public/Community Stuff</summary>
   
   - [ ] TUI installer
