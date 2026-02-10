@@ -1,3 +1,2 @@
-# N0ctOS
-Historical Events:
-8 Jan 26, 10:27 AM [Repo created]
+# N0ctOS Website Branch
+This is the branch used for github pages to publish the website...
