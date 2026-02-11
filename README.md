@@ -1,2 +1,2 @@
-# N0ctOS Website Branch
-This is the branch used for github pages to publish the website...
+# N0ctOS Website ***DEPLOYMENT*** Branch
+## AUTOMATED BRANCH.... BUILDS THE WEBSITE FROM SOURCE-CODE BRANCH AND PUSHES TO THIS AND PUBLISHES TO GH PAGES
