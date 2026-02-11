@@ -4,7 +4,7 @@ Hi ! I am **N0ctane**, with my team. This project is an *open source* project cu
 
 
 # About the Project:
-#### Philosophy :
+## Philosophy :
 This is an ***Simplified, Opinionated ARCH Linux Experience***, which **targets** *Developers, New Arch/Linux users, Daily driving linux users, or* **those who dont wanna rice from start.**
 It is a pre-configured *Arch + Hyprland* setup, with additional custom scripts, utilities, and bunch of more stuff...
 
