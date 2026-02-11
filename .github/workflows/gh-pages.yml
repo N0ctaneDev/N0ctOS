@@ -28,6 +28,4 @@ jobs:
               run: npm ci
 
             - name: Deploy project
-              run: |
-                  git remote add origin https://github.com/N0ctaneDev/N0ctOS.git
-                  npm run deploy
+              run: npm run deploy
