@@ -58,11 +58,11 @@ jobs:
                     exit 1
                   fi
                   
-                  git add /dist/
+                  git add dist/*
                   git commit -m "Deploy from website-source-code @ $GITHUB_SHA"
                   git push origin n0ctos-website --force
                   
-            - name: Unpack the deplyed /dist to root
+            - name: Unpack the deployed /dist to root
               run: |
                   git config user.name "github-actions"
                   git config user.email "github-actions@github.com"
