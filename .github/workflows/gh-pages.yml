@@ -13,6 +13,10 @@ jobs:
             contents: write
 
         steps:
+            - name: Global Auth
+              run: |
+                  git --global config user.name "github-actions"
+                  git --global config user.email "github-actions@github.com"
             - name: Checkout source branch
               uses: actions/checkout@v5
               with:
