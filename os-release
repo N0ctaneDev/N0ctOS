@@ -1,0 +1,16 @@
+NAME=N0ctOS
+PRETTY_NAME="N0ctOS 0.0.0 (The Beginning)"
+ID=n0ctos
+ID_LIKE=arch
+VERSION="0(The Beginning)"
+VERSION_ID=0.0
+VERSION_CODENAME=beginning
+BUILD_ID=rolling
+RELEASE_TYPE=development
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://n0ctaneteam.github.io/N0ctOS"
+DOCUMENTATION_URL="https://wiki.archlinux.org/"
+SUPPORT_URL="https://bbs.archlinux.org/"
+BUG_REPORT_URL="https://gitlab.archlinux.org/groups/archlinux/-/issues"
+PRIVACY_POLICY_URL="https://terms.archlinux.org/docs/privacy-policy/"
+LOGO=N0ctOS-Icon
