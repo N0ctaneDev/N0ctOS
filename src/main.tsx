@@ -20,12 +20,12 @@ createRoot(document.getElementById("root")!).render(
                 {/*<Route path="/" element={<Navigate to="/home" replace />} /> // page is ready*/}
                 <Route path="/" element={<Navigate to="/wall" replace />} /> // page under dev
                 
+                <Route path="/wall" element={<Pageunderbuild />} /> // show under dev page
                 <Route path="/home" element={<Home />} />
                 <Route path="/features" element={<Features />} />
                 <Route path="/download" element={<Download />} />
                 <Route path="/team" element={<Team />} />
                 
-                <Route path="/wall" element={<Pageunderbuild />} /> // show under dev page
             </Routes>
         </BrowserRouter>
     </StrictMode>,
