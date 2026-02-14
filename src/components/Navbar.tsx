@@ -87,7 +87,7 @@ const Navbar = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                    to={`/${item.toLowerCase()}`}
                     className="text-gray-400 font-medium transition-all duration-300 hover:text-primary-400 text-lg block py-3"
                     onClick={() => setIsMenuOpen(false)}
                   >
