@@ -19,7 +19,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
-            <Link to="/" className="flex flex-col">
+            <Link to="/home" className="flex flex-col">
               <h1 className="text-3xl font-black bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-500 bg-clip-text text-transparent">
                 N0ctOS
               </h1>
