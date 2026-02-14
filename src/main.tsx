@@ -16,9 +16,9 @@ createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <BrowserRouter basename="/N0ctOS">
             <Routes>
-                {/*uncomment the line below, to make the page live*/}
-                {/*<Route path="/" element={<Navigate to="/home" replace />} /> // when page is ready*/}
-                <Route path="/" element={<Pageunderbuild />} /> // for building the App
+                {/*bring the 2nd line to top, to make the page live*/}
+                <Route path="/" element={<Pageunderbuild />} /> // show under dev page
+                <Route path="/" element={<Navigate to="/home" replace />} /> // take it top when page is ready
                 
                 <Route path="/home" element={<Home />} />
                 <Route path="/features" element={<Features />} />
