@@ -1,5 +1,5 @@
 import logo from "./assets/N0ctOS.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Pageunderbuild = () => {
     // Optimized particles
