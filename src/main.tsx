@@ -1,32 +1,24 @@
-import { StrictMode } from "react";
+const isPublic: boolean = false;
+// this variable decides if the wall is to be shown or not...
+// true: publishes the app to isPublic
+// false: replaces everything with wall(pageunderbuild)
+// this doesnt even matter which path it is
+
+// some react stuff
+import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import {  Routes, Route , Navigate, BrowserRouter} from "react-router-dom";
+import { StrictMode } from "react";
 import "./index.css";
-import "./App.css";
 
 // Import pages
-import Home from "./pages/Home";
-import Features from "./pages/Features";
-import Download from "./pages/Download";
-import Team from "./pages/Team";
-
+import { App } from "./App";
 import { Pageunderbuild } from "./pageunderbuild";
 
+
 createRoot(document.getElementById("root")!).render(
-    <StrictMode>
-        <BrowserRouter basename="/N0ctOS">
-            <Routes>
-                {/*uncomment 1st line and comment the 2nd line, to make the page live*/}
-                {/*<Route path="/" element={<Navigate to="/home" replace />} /> // page is ready*/}
-                <Route path="/" element={<Navigate to="/wall" replace />} /> // page under dev
-                
-                <Route path="/wall" element={<Pageunderbuild />} /> // show under dev page
-                <Route path="/home" element={<Home />} />
-                <Route path="/features" element={<Features />} />
-                <Route path="/download" element={<Download />} />
-                <Route path="/team" element={<Team />} />
-                
-            </Routes>
-        </BrowserRouter>
-    </StrictMode>,
+  <StrictMode>
+    <BrowserRouter basename="/N0ctOS">
+      <>{isPublic ? <App /> : <Pageunderbuild />}</> {/*decides what to render*/}
+    </BrowserRouter>
+  </StrictMode>,
 );

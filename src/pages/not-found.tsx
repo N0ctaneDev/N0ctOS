@@ -1,11 +1,36 @@
+import { useNavigate } from "react-router-dom";
 import logo from "/N0ctOS.png";
 import { motion } from "framer-motion";
 
-// import "/test.css";
+// import "/src/test.css";
 
-export const Pageunderbuild = () => {
+import { useEffect } from "react";
+
+export const NotFound = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>(".BAR");
+
+    elements.forEach((el) => {
+      el.style.display = "none";
+    });
+  }, []);
+
+  const messages = [
+    "Umm... Page not found",
+    "You’re lost, bro",
+    "This route doesn’t exist",
+    "404 — skill issue",
+  ];
+
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
   // Optimized particles
   const particles = Array.from({ length: 200 }, (_, i) => ({ id: i }));
+
+  const navigate = useNavigate();
+  const redirectToHome = () => {
+    navigate("/home");
+  };
 
   return (
     <>
@@ -32,39 +57,25 @@ export const Pageunderbuild = () => {
         ))}
       </div>
       <div className="min-h-dvh  flex flex-col flex-grow justify-between content-between pb-14 min-w-full outline outline-white">
-        <div
-          className="h-5 min-w-screen"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, #facc15 0px, #facc15 20px, #000 20px, #000 40px)",
-          }}
-        />
         <div className="flex-1 flex-col items-center justify-between content-center">
           <div className="flex justify-center">
             <img className="" src={logo} />
           </div>
           <div className="flex flex-grow-1  flex-col bg-transparent font-tektur font-black text-center ">
-            <h1 className="text-[clamp(2.5rem,10vw,4.8rem)] leading-none bg-gradient-to-br from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Page Is Under Development..
+            <h1 className="text-[clamp(1.9rem,10vw,3.8rem)] leading-none bg-gradient-to-br from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              {randomMessage}
             </h1>
             <div>
-              <span>Meanwhile, Checkout our </span>
-              <a
-                href="https://github.com/n0ctaneteam/N0ctOS"
-                className="text-xl text-cyan-300 underline underline-offset-4"
+              <span className="text-2xl">So... </span>
+              <button
+                onClick={redirectToHome}
+                className="text-3xl bg-gradient-to-br from-teal-400 to-cyan-600 bg-clip-text text-transparent underline underline-offset-4"
               >
-                Github
-              </a>
+                Go Back To Home
+              </button>
             </div>
           </div>
         </div>
-        <div
-          className="h-5 w-full fixed bottom-0"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, #facc15 0px, #facc15 20px, #000 20px, #000 40px)",
-          }}
-        />
       </div>
     </>
   );
