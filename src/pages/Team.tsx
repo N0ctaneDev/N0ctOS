@@ -1,25 +1,29 @@
 import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Team() {
   const particles = Array.from({ length: 15 }, (_, i) => ({ id: i }));
 
   const teamMembers = [
     {
-      name: "anagh.exe",
-      role: "Quantum Architect",
-      github: "https://github.com/anagh.exe",
-      description: "Lead developer and system architect",
+      name: "N0ctaneDev",
+      role: "Lead Developer & OS Creator",
+      github: "https://github.com/N0ctaneDev",
+      description: "Building the N0ctOS operating system from the ground up",
     },
     {
-      name: "N0ctaneDev",
-      role: "AI Integration Expert",
-      github: "https://github.com/N0ctaneDev",
-      description: "Machine learning and automation specialist",
+      name: "anaghsinghcodingo",
+      role: "Full Stack Developer",
+      github: "https://github.com/anaghsinghcodingo",
+      description: "Creating the website and applications for N0ctOS",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white relative font-tektur">
+    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
+      <Navbar />
+      
       {/* Particle background */}
       <div className="fixed inset-0 pointer-events-none">
         {particles.map((particle) => (
@@ -44,7 +48,7 @@ function Team() {
       </div>
 
       {/* Main content */}
-      <main className="pt-24 pb-16 px-4">
+      <main className="pt-28 pb-20 px-4 flex-grow">
         <div className="container">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-accent to-primary-500 bg-clip-text text-transparent"
@@ -113,6 +117,7 @@ function Team() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

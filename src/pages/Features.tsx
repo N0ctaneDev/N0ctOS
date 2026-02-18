@@ -1,4 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Features() {
   const { scrollY } = useScroll();
@@ -32,7 +34,9 @@ function Features() {
   };
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white overflow-x-hidden relative font-tektur">
+    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
+      <Navbar />
+      
       {/* Optimized particle background */}
       <div className="fixed inset-0 pointer-events-none">
         {particles.map((particle) => (
@@ -57,7 +61,7 @@ function Features() {
         ))}
       </div>
 
-      <main className="pt-20">
+      <main className="pt-28 pb-20 flex-grow">
         <section className="py-24 bg-gradient-to-b from-dark-secondary to-dark-primary relative">
           <motion.div
             className="absolute inset-0 bg-gradient-radial opacity-30"
@@ -106,7 +110,7 @@ function Features() {
                   title: "Fortress Security",
                   description:
                     "Military-grade encryption with quantum-resistant cryptography",
-                  color: "from-blue-400 to-cyan-500",
+                  color: "from-purple-400 to-purple-500",
                 },
                 {
                   icon: "🌐",
@@ -134,7 +138,7 @@ function Features() {
                   title: "Cross-Platform",
                   description:
                     "Seamless experience across desktop, mobile, and embedded systems",
-                  color: "from-cyan-400 to-blue-500",
+                  color: "from-purple-400 to-purple-500",
                 },
               ].map((feature) => (
                 <motion.div
@@ -144,7 +148,7 @@ function Features() {
                   whileHover={{
                     scale: 1.05,
                     rotateY: 5,
-                    boxShadow: "0 30px 60px rgba(0, 212, 255, 0.4)",
+                    borderColor: "rgba(128, 0, 128, 0.5)",
                   }}
                 >
                   <motion.div
@@ -182,6 +186,7 @@ function Features() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

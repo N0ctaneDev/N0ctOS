@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
+const LOGO_URL = "https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -23,10 +25,12 @@ const Navbar = () => {
               damping: 25,
             }}
           >
-            <Link to="/home" className="flex flex-col">
-              <h1 className="text-3xl font-black bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-500 bg-clip-text text-transparent">
-                N0ctOS
-              </h1>
+            <Link to="/home" className="flex items-center gap-3">
+              <img 
+                src={LOGO_URL} 
+                alt="N0ctOS" 
+                className="w-20 h-20 object-contain"
+              />
               <span className="text-xs text-primary-400 font-mono">
                 v2026.1
               </span>
@@ -35,7 +39,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex list-none gap-8">
-            {["Home", "Features", "Download", "Team"].map((item, index) => (
+            {["Home", "Features", "Download", "Docs", "Team"].map((item, index) => (
               <motion.li
                 key={item}
                 initial={{ y: -20, opacity: 0 }}
@@ -48,7 +52,7 @@ const Navbar = () => {
               >
                 <Link
                   to={`/${item.toLowerCase()}`}
-                  className="text-gray-400 font-medium transition-all duration-300 hover:text-primary-400 hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.5)] relative group"
+                  className="text-gray-400 font-medium transition-all duration-300 hover:text-primary-400 hover:drop-shadow-[0_0_10px_rgba(139,92,246,0.5)] relative group"
                 >
                   {item}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-500 group-hover:w-full transition-all duration-300" />
@@ -92,7 +96,7 @@ const Navbar = () => {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {["Home", "Features", "Download", "Team"].map((item) => (
+              {["Home", "Features", "Download", "Docs", "Team"].map((item) => (
                 <motion.li key={item} whileTap={{ scale: 0.95 }}>
                   <Link
                     to={`/${item.toLowerCase()}`}

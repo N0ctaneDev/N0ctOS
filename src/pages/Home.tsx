@@ -1,39 +1,44 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Home() {
   const { scrollY } = useScroll();
 
   const heroY = useTransform(scrollY, [0, 1000], [0, -200]);
 
-  // Optimized particles
-  const particles = Array.from({ length: 60 }, (_, i) => ({ id: i }));
+  // Optimized particles - reduced count for better performance
+  const particles = Array.from({ length: 20 }, (_, i) => ({ id: i }));
 
   return (
-    <div className="min-h-screen bg-transparent text-white overflow-x-hidden relative font-tektur">
+    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
+      <Navbar />
+      
       {/* Optimized particle background */}
       <div className="fixed inset-0 pointer-events-none -z-10  bg-dark-primary">
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
-            className="absolute w-2 h-2 bg-primary-500 rounded-full opacity-30 gpu-accelerated"
+            className="absolute w-1 h-1 bg-primary-500 rounded-full opacity-20"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${(particle.id * 17) % 100}%`,
+              top: `${(particle.id * 23) % 100}%`,
+              willChange: "transform",
             }}
             animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 40 - 20, 0],
-              opacity: [0.1, 0.3, 0.1],
+              y: [0, -30, 0],
+              opacity: [0.1, 0.25, 0.1],
             }}
             transition={{
-              duration: Math.random() * 6 + 3,
+              duration: 5 + (particle.id % 3),
               repeat: Infinity,
               ease: "easeInOut",
+              delay: particle.id * 0.1,
             }}
           />
         ))}
       </div>
-      <main className="pt-20">
+      <main className="pt-28 pb-20 flex-grow">
         <section className="min-h-screen flex items-center px-4 relative">
           <motion.div
             className="absolute inset-0 bg-gradient-radial opacity-50"
@@ -48,43 +53,32 @@ function Home() {
               transition={{ duration: 0.8, damping: 25 }}
             >
               <motion.div
-                className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full px-4 py-2 mb-6"
+                className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full px-4 py-2 mb-3"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
                 <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
                 <span className="text-yellow-400 text-sm font-medium">
-                  🚧 Work in Progress
+                  Work in Progress
                 </span>
               </motion.div>
 
-              <motion.h1
-                className="text-6xl md:text-8xl font-black mb-6 leading-tight"
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
+              <motion.div
+                className="mb-2"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1, duration: 0.6 }}
               >
-                <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-500 bg-clip-text text-transparent">
-                  N0ct
-                </span>
-                <motion.span
-                  className="bg-gradient-to-r from-secondary-500 to-accent bg-clip-text text-transparent"
-                  animate={{
-                    textShadow: [
-                      "0 0 20px rgba(255, 107, 53, 0.5)",
-                      "0 0 40px rgba(255, 107, 53, 0.8)",
-                      "0 0 20px rgba(255, 107, 53, 0.5)",
-                    ],
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  OS
-                </motion.span>
-              </motion.h1>
+                <img 
+                  src="https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png" 
+                  alt="N0ctOS" 
+                  className="w-32 h-32 md:w-48 md:h-48 object-contain drop-shadow-[0_0_40px_rgba(139,92,246,0.5)]"
+                />
+              </motion.div>
 
               <motion.p
-                className="text-2xl md:text-3xl text-primary-400 font-bold mb-4"
+                className="text-2xl md:text-3xl text-primary-400 font-bold mb-2"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
@@ -198,7 +192,7 @@ function Home() {
                   className="terminal relative z-10"
                   style={{
                     boxShadow:
-                      "0 25px 50px rgba(0, 212, 255, 0.3), 0 0 100px rgba(0, 212, 255, 0.1)",
+                      "0 30px 60px rgba(139, 92, 246, 0.4), 0 0 100px rgba(139, 92, 246, 0.1)",
                   }}
                 >
                   <div className="terminal-header bg-gradient-to-r from-dark-tertiary to-dark-secondary">
@@ -259,6 +253,7 @@ function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

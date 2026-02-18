@@ -80,7 +80,7 @@ const CustomCursor = () => {
         animate={{ scale: isHovering ? 2 : 1 }}
         transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
         style={{
-          boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)',
+          boxShadow: '0 0 20px rgba(139, 92, 246, 0.5)',
           willChange: 'transform',
         }}
       />

@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Download() {
   // Optimized particles
   const particles = Array.from({ length: 20 }, (_, i) => ({ id: i }));
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white overflow-x-hidden relative font-tektur">
+    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
+      <Navbar />
+      
       {/* Optimized particle background */}
       <div className="fixed inset-0 pointer-events-none">
         {particles.map((particle) => (
@@ -30,7 +34,7 @@ function Download() {
         ))}
       </div>
 
-      <main className="pt-20">
+      <main className="pt-28 pb-20 flex-grow">
         <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent/10" />
 
@@ -104,7 +108,7 @@ function Download() {
                         className="flex items-center gap-3 p-3 rounded-lg bg-dark-secondary/50 border border-gray-700"
                         whileHover={{
                           scale: 1.05,
-                          borderColor: "rgba(0, 212, 255, 0.5)",
+                          borderColor: "rgba(139, 92, 246, 0.5)",
                         }}
                       >
                         <span className="text-2xl">{req.icon}</span>
@@ -121,6 +125,106 @@ function Download() {
                   </div>
                 </div>
               </div>
+
+              {/* Terminal Effect */}
+              <motion.div
+                className="flex justify-center lg:justify-end"
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <motion.div
+                  className="relative"
+                  animate={{
+                    rotate: [0, 2, -2, 0],
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 w-80 h-80 bg-primary-500/20 rounded-full blur-3xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.6, 0.3],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+
+                  <motion.div
+                    className="terminal relative z-10"
+                    style={{
+                      boxShadow: "0 25px 50px rgba(139, 92, 246, 0.3), 0 0 100px rgba(139, 92, 246, 0.1)",
+                    }}
+                  >
+                    <div className="terminal-header bg-gradient-to-r from-dark-tertiary to-dark-secondary">
+                      <div className="terminal-buttons">
+                        <span className="btn-close shadow-lg shadow-red-500/50"></span>
+                        <span className="btn-minimize shadow-lg shadow-yellow-500/50"></span>
+                        <span className="btn-maximize shadow-lg shadow-green-500/50"></span>
+                      </div>
+                      <div className="terminal-title text-primary-400 font-mono">
+                        n0ctos@download-installer
+                      </div>
+                    </div>
+                    <div className="terminal-body bg-dark-secondary/90 backdrop-blur">
+                      <motion.div
+                        className="terminal-line text-primary-400"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5, duration: 2 }}
+                      >
+                        $ sudo ./download-n0ctos.sh --2026
+                      </motion.div>
+                      <motion.div
+                        className="terminal-line text-gray-400"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 2.5, duration: 0.5 }}
+                      >
+                        📦 Preparing download packages...
+                      </motion.div>
+                      <motion.div
+                        className="terminal-line text-gray-400"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 3.5, duration: 0.5 }}
+                      >
+                        🔐 Verifying signatures...
+                      </motion.div>
+                      <motion.div
+                        className="terminal-line success text-green-400 font-bold"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 4.5, duration: 0.5 }}
+                      >
+                        ✓ Ready to download N0ctOS 2026!
+                      </motion.div>
+                      <motion.div
+                        className="terminal-line text-primary-400 animate-pulse"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 5.5, duration: 0.5 }}
+                      >
+                        🚀 Join the development journey...
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
 
               <div className="download-buttons text-center">
                 <motion.div
@@ -195,6 +299,7 @@ function Download() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

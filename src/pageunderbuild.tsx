@@ -43,14 +43,14 @@ export const Pageunderbuild = () => {
             <img className="" src="https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png" />
           </div>
           <div className="flex flex-grow-1  flex-col bg-transparent font-tektur font-black text-center ">
-            <h1 className="text-[clamp(2.5rem,10vw,4.8rem)] leading-none bg-gradient-to-br from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="text-[clamp(2.5rem,10vw,4.8rem)] leading-none bg-gradient-to-br from-violet-600 via-purple-600 to-purple-500 bg-clip-text text-transparent">
               Page Is Under Development..
             </h1>
             <div>
               <span>Meanwhile, Checkout our </span>
               <a
                 href="https://github.com/n0ctaneteam/N0ctOS"
-                className="text-xl text-cyan-300 underline underline-offset-4"
+                className="text-xl text-purple-300 underline underline-offset-4"
               >
                 Github
               </a>
