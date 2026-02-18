@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import logo from "/N0ctOS.png";
 import { motion } from "framer-motion";
 
 // import "/src/test.css";

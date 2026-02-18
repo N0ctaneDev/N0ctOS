@@ -1,4 +1,3 @@
-import logo from "/N0ctOS.png";
 import { motion } from "framer-motion";
 
 // import "/test.css";
