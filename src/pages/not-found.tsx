@@ -59,7 +59,7 @@ export const NotFound = () => {
       <div className="min-h-dvh  flex flex-col flex-grow justify-between content-between pb-14 min-w-full outline outline-white">
         <div className="flex-1 flex-col items-center justify-between content-center">
           <div className="flex justify-center">
-            <img className="" src={logo} />
+            <img className="" src="https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png" />
           </div>
           <div className="flex flex-grow-1  flex-col bg-transparent font-tektur font-black text-center ">
             <h1 className="text-[clamp(1.9rem,10vw,3.8rem)] leading-none bg-gradient-to-br from-violet-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
