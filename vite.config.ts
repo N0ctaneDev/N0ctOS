@@ -7,5 +7,8 @@ export const isPublic = false
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base: "/N0ctOS",
+  base: "/N0ctOS",
+  server: {
+      host: true
+    }
 })

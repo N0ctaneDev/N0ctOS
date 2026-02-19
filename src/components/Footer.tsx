@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src={LOGO_URL} 
                 alt="N0ctOS" 
-                className="w-14 h-14 object-contain"
+                className="object-contain"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">

@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 // dont add Navbar and Footer on indivisual pages bro
 
-const Tagline = "The Future of Linux is Here";
-const Description = "Experience quantum-level performance with our revolutionary Arch-based distribution. Built for developers, designed for humans, optimized for 2026.";
+const Tagline = "Linux, Made Simple & Beautiful";
+const Description = "Experience quantum-level performance with our Arch-based linux distribution. Built for developers, designed for humans, optimized for 2026.";
 
 function Home() {
   return (
-    <div className=" text-white font-tektur flex flex-col">
+    <div className=" text-white font-tektur flex flex-col w-dvw">
       <main className="flex-grow py-4">
-        <section className=" h-auto flex items-center px-4 relative">
+        <section className=" h-auto flex items-center px-4 relative ">
           <div className="container grid lg:grid-cols-2 gap-16 items-center relative z-20">
             <motion.div
               className="hero-content"
@@ -98,18 +98,18 @@ function Home() {
                 transition={{ delay: 0.8, duration: 1 }}
               >
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-400">10x</div>
-                  <div className="text-sm text-gray-500">Faster Boot</div>
+                  <div className="text-3xl font-bold text-primary-400">ARCH</div>
+                  <div className="text-sm text-gray-500">But easy-peasy</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-400">50%</div>
-                  <div className="text-sm text-gray-500">Less Memory</div>
+                  <div className="text-3xl font-bold text-primary-400">Linux</div>
+                  <div className="text-sm text-gray-500">But like windows</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary-400">
-                    99.9%
+                    Made Easy
                   </div>
-                  <div className="text-sm text-gray-500">Uptime</div>
+                  <div className="text-sm text-gray-500">For You !!</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -159,7 +159,7 @@ function Home() {
                       <span className="btn-maximize shadow-lg shadow-green-500/50"></span>
                     </div>
                     <div className="terminal-title text-primary-400 font-mono">
-                      n0ctos@quantum-installer
+                      n0ctos@n1tro-installer
                     </div>
                   </div>
                   <div className="terminal-body bg-dark-secondary/90 backdrop-blur">
@@ -169,7 +169,7 @@ function Home() {
                       animate={{ width: "100%" }}
                       transition={{ delay: 1, duration: 2 }}
                     >
-                      $ sudo ./quantum-install.sh --2026
+                      $ sudo install N0ctOS
                     </motion.div>
                     <motion.div
                       className="terminal-line text-gray-400"
@@ -177,7 +177,7 @@ function Home() {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 3, duration: 0.5 }}
                     >
-                      🚀 Initializing quantum core...
+                      🚀 Initializing ARCH core...
                     </motion.div>
                     <motion.div
                       className="terminal-line text-gray-400"
@@ -185,7 +185,7 @@ function Home() {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 4, duration: 0.5 }}
                     >
-                      ⚡ Optimizing neural pathways...
+                      ⚡ Optimizing Your Workflow
                     </motion.div>
                     <motion.div
                       className="terminal-line success text-green-400 font-bold"

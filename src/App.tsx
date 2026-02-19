@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 export const App = () => {
   const particles = Array.from({ length: 40 }, (_, i) => ({ id: i }));
   return (
-    <div className="w-dvw min-h-dvh flex flex-col content-between justify-between gap-0">
+    <div className="w-dvw min-h-dvh flex flex-col content-between justify-between gap-0 overflow-hidden">
       
       {/* the radial gradient bg */}
       <motion.div className="fixed top-0 bottom-0 left-0 right-0 inset-0 bg-gradient-radial opacity-50 -z-40" />
@@ -45,7 +45,7 @@ export const App = () => {
         ))}
       </div>
       <Navbar />
-      <div className="px-1 py-5 flex-grow">
+      <div className="px-1 py-5 flex-grow mt-[clamp(50px,10dvh,100px)] ">
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace/>}/>
         <Route path="/home" element={<Home />} />

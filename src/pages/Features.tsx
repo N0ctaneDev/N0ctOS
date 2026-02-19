@@ -2,12 +2,41 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const LOGO_URL = "https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png";
+const LOGO_URL =
+  "https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png";
+
+const features_list = [
+  {
+    icon: "⚡",
+    title: "Super Speed",
+    description:
+      "Lightning-fast boot times and instant application launches with well-optimizations",
+    color: "from-yellow-400 to-orange-500",
+  },
+  {
+    icon: "🛡️",
+    title: "Fortress Security*",
+    description: "No Tracking & user-data collection. Plus Linux Security",
+    color: "from-purple-400 to-purple-500",
+  },
+  {
+    icon: "🌐",
+    title: "Future Ready",
+    description: "Built for tomorrow with cutting-edge stable technology stack",
+    color: "from-green-400 to-emerald-500",
+  },
+  {
+    icon: "🔧",
+    title: "Developer Tools",
+    description:
+      "Comprehensive development environment with modern tools and libraries",
+    color: "from-indigo-400 to-purple-500",
+  },
+];
 
 function Features() {
   const { scrollY } = useScroll();
   const featuresY = useTransform(scrollY, [0, 1000], [0, -100]);
-
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,7 +63,7 @@ function Features() {
   };
 
   return (
-    <div className=" text-white font-tektur flex flex-col">
+    <div className=" text-white font-tektur flex flex-col justify-center content-center items-center">
       <main className="flex-grow">
         <section className="py-24 relative">
           <motion.div
@@ -50,9 +79,9 @@ function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img 
-                src={LOGO_URL} 
-                alt="N0ctOS Logo" 
+              <img
+                src={LOGO_URL}
+                alt="N0ctOS Logo"
                 className="w-[clamp(100px,100%,400px)] object-contain mx-auto mb-6 drop-shadow-[0_0_20px_rgba(139,92,246,0.5)]"
               />
               Why Choose{" "}
@@ -69,57 +98,7 @@ function Features() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              {[
-                {
-                  icon: "⚡",
-                  title: "Quantum Speed",
-                  description:
-                    "Lightning-fast boot times and instant application launches with quantum-optimized kernel",
-                  color: "from-yellow-400 to-orange-500",
-                },
-                {
-                  icon: "🧠",
-                  title: "AI-Powered",
-                  description:
-                    "Machine learning algorithms optimize system performance in real-time",
-                  color: "from-purple-400 to-pink-500",
-                },
-                {
-                  icon: "🛡️",
-                  title: "Fortress Security",
-                  description:
-                    "Military-grade encryption with quantum-resistant cryptography",
-                  color: "from-purple-400 to-purple-500",
-                },
-                {
-                  icon: "🌐",
-                  title: "Future Ready",
-                  description:
-                    "Built for tomorrow with cutting-edge technology stack",
-                  color: "from-green-400 to-emerald-500",
-                },
-                {
-                  icon: "🔧",
-                  title: "Developer Tools",
-                  description:
-                    "Comprehensive development environment with modern tools and libraries",
-                  color: "from-indigo-400 to-purple-500",
-                },
-                {
-                  icon: "🎮",
-                  title: "Gaming Optimized",
-                  description:
-                    "Enhanced graphics performance for gaming and creative applications",
-                  color: "from-red-400 to-pink-500",
-                },
-                {
-                  icon: "📱",
-                  title: "Cross-Platform",
-                  description:
-                    "Seamless experience across desktop, mobile, and embedded systems",
-                  color: "from-purple-400 to-purple-500",
-                },
-              ].map((feature) => (
+              {features_list.map((feature) => (
                 <motion.div
                   key={feature.title}
                   className="feature-card group relative overflow-hidden"
@@ -165,6 +144,7 @@ function Features() {
           </div>
         </section>
       </main>
+      <span className="self-center text-slate-700 text-xs">*security breach is responsibility of user. Although we provide open source and safe softwares, user may install breach-er softwares</span>
     </div>
   );
 }

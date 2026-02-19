@@ -9,13 +9,13 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className="BAR sticky top-0 w-full h-[clamp(50px,10dvh,100px)] bg-dark-primary/80 backdrop-blur-xl border-b border-primary-500/20 z-50"
+      className="BAR fixed top-1px w-dvw h-[clamp(50px,10dvh,10px)] bg-dark-primary/80 backdrop-blur-xl border-b border-primary-500/20 z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <nav className="flex py-1 px-[clamp(10px,10rem,20px)] justify-center content-center max-h-full">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-grow justify-between gap-7 items-center w-[clamp(0px,100vdw,500px)]">
           {/* Logo */}
           <motion.div
             transition={{
@@ -29,7 +29,7 @@ const Navbar = () => {
               <img 
                 src={LOGO_URL} 
                 alt="N0ctOS" 
-                className="object-contain max-h-full"
+                className="object-contain max-h-full max-w-36"
               />
               <span className="text-xs text-primary-400 font-mono object-contain">
                 v2026.1
