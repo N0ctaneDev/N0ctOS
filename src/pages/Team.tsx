@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-function Team() {
-  const particles = Array.from({ length: 15 }, (_, i) => ({ id: i }));
+const LOGO_URL = "https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png";
 
+function Team() {
   const teamMembers = [
     {
       name: "N0ctaneDev",
@@ -21,34 +21,8 @@ function Team() {
   ];
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
-      <Navbar />
-      
-      {/* Particle background */}
-      <div className="fixed inset-0 pointer-events-none">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary-500 rounded-full opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: Math.random() * 5 + 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Main content */}
-      <main className="pt-28 pb-20 px-4 flex-grow">
+    <div className=" text-white font-tektur flex flex-col">
+      <main className="flex-grow py-24">
         <div className="container">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-accent to-primary-500 bg-clip-text text-transparent"
@@ -56,6 +30,11 @@ function Team() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
+            <img 
+              src={LOGO_URL} 
+              alt="N0ctOS Logo" 
+              className="w-[clamp(100px,100%,400px)] object-contain mx-auto mb-6 drop-shadow-[0_0_20px_rgba(139,92,246,0.5)]"
+            />
             Meet the Visionaries
           </motion.h1>
 
@@ -117,7 +96,6 @@ function Team() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

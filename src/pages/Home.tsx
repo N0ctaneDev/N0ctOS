@@ -1,50 +1,15 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+
+// dont add Navbar and Footer on indivisual pages bro
+
+const Tagline = "The Future of Linux is Here";
+const Description = "Experience quantum-level performance with our revolutionary Arch-based distribution. Built for developers, designed for humans, optimized for 2026.";
 
 function Home() {
-  const { scrollY } = useScroll();
-
-  const heroY = useTransform(scrollY, [0, 1000], [0, -200]);
-
-  // Optimized particles - reduced count for better performance
-  const particles = Array.from({ length: 20 }, (_, i) => ({ id: i }));
-
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
-      <Navbar />
-      
-      {/* Optimized particle background */}
-      <div className="fixed inset-0 pointer-events-none -z-10  bg-dark-primary">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary-500 rounded-full opacity-20"
-            style={{
-              left: `${(particle.id * 17) % 100}%`,
-              top: `${(particle.id * 23) % 100}%`,
-              willChange: "transform",
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.1, 0.25, 0.1],
-            }}
-            transition={{
-              duration: 5 + (particle.id % 3),
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: particle.id * 0.1,
-            }}
-          />
-        ))}
-      </div>
-      <main className="pt-28 pb-20 flex-grow">
-        <section className="min-h-screen flex items-center px-4 relative">
-          <motion.div
-            className="absolute inset-0 bg-gradient-radial opacity-50"
-            style={{ y: heroY }}
-          />
-
+    <div className=" text-white font-tektur flex flex-col">
+      <main className="flex-grow py-4">
+        <section className=" h-auto flex items-center px-4 relative">
           <div className="container grid lg:grid-cols-2 gap-16 items-center relative z-20">
             <motion.div
               className="hero-content"
@@ -70,10 +35,10 @@ function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1, duration: 0.6 }}
               >
-                <img 
-                  src="https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png" 
-                  alt="N0ctOS" 
-                  className="w-32 h-32 md:w-48 md:h-48 object-contain drop-shadow-[0_0_40px_rgba(139,92,246,0.5)]"
+                <img
+                  src="https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png"
+                  alt="N0ctOS"
+                  className="object-contain drop-shadow-[0_0_40px_rgba(139,92,246,0.5)]"
                 />
               </motion.div>
 
@@ -83,7 +48,7 @@ function Home() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                The Future of Linux is Here
+                {Tagline}
               </motion.p>
 
               <motion.p
@@ -92,20 +57,18 @@ function Home() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
-                Experience quantum-level performance with our revolutionary
-                Arch-based distribution. Built for developers, designed for
-                humans, optimized for 2026.
+                {Description}
               </motion.p>
 
               <motion.div
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap gap-4 justify-between"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
                 <motion.a
                   href="#download"
-                  className="btn btn-primary relative overflow-hidden group"
+                  className="btn btn-primary flex-grow justify-center relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -113,17 +76,11 @@ function Home() {
                     <span className="text-xl">🚧</span>
                     Join Development
                   </span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "0%" }}
-                    transition={{ duration: 0.3 }}
-                  />
                 </motion.a>
 
                 <motion.a
                   href="#features"
-                  className="btn btn-secondary border-2 border-primary-500/50 hover:border-primary-400"
+                  className="btn btn-secondary flex-grow justify-center border-2 border-primary-500/50 hover:border-primary-400"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -158,7 +115,7 @@ function Home() {
             </motion.div>
 
             <motion.div
-              className="hero-visual flex justify-center lg:justify-end"
+              className="hero-visual flex justify-center lg:justify-end mb-20"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2, damping: 25 }}
@@ -167,7 +124,7 @@ function Home() {
                 className="relative"
                 animate={{
                   rotate: [0, 2, -2, 0],
-                  y: [0, -10, 0],
+                  y: [0, -15, 0],
                 }}
                 transition={{
                   duration: 4,
@@ -207,7 +164,7 @@ function Home() {
                   </div>
                   <div className="terminal-body bg-dark-secondary/90 backdrop-blur">
                     <motion.div
-                      className="terminal-line text-primary-400"
+                      className="terminal-line text-primary-400 overflow-hidden text-nowrap"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ delay: 1, duration: 2 }}
@@ -253,7 +210,6 @@ function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

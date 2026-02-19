@@ -1,6 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
 
 export const NotFound = () => {
   const navigate = useNavigate();
@@ -17,43 +16,16 @@ export const NotFound = () => {
 
   const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
-  const particles = Array.from({ length: 30 }, (_, i) => ({ id: i }));
-
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-tektur">
-      <Navbar />
-      
-      <div className="fixed inset-0 pointer-events-none -z-10 bg-gradient-to-br from-zinc-950 to-gray-950">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary-400 rounded-full opacity-40"
-            style={{
-              left: `${(particle.id * 17) % 100}%`,
-              top: `${(particle.id * 23) % 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 4 + (particle.id % 3),
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: particle.id * 0.1,
-            }}
-          />
-        ))}
-      </div>
-      
-      <div className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center px-4 pt-20">
+    <div className=" text-white font-tektur flex justify-center content-center items-center">      
+      <div className="flex flex-col items-center justify-center w-[clamp(0px,98vw,130vh)] py-20">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <img 
-            className="w-24 h-24 md:w-32 md:h-32 object-contain mb-8" 
+            className="object-contain mb-8 px-[clamp(1, )]" 
             src="https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png" 
             alt="N0ctOS"
           />
@@ -82,13 +54,6 @@ export const NotFound = () => {
           >
             Go Back To Home
           </button>
-          
-          <Link 
-            to="/home" 
-            className="text-gray-400 hover:text-primary-400 transition-colors underline underline-offset-4"
-          >
-            ← Back to Home
-          </Link>
         </motion.div>
       </div>
     </div>

@@ -2,42 +2,13 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+const LOGO_URL = "https://res.cloudinary.com/drysfsc1b/image/upload/v1771153631/N0ctOS_ritdbv.png";
+
 function Download() {
-  // Optimized particles
-  const particles = Array.from({ length: 20 }, (_, i) => ({ id: i }));
-
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
-      <Navbar />
-      
-      {/* Optimized particle background */}
-      <div className="fixed inset-0 pointer-events-none">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary-500 rounded-full opacity-30 gpu-accelerated"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 40 - 20, 0],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: Math.random() * 6 + 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
-      <main className="pt-28 pb-20 flex-grow">
+    <div className=" text-white font-tektur flex flex-col">
+      <main className="flex-grow">
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent/10" />
-
           <div className="container relative z-10">
             <motion.h2
               className="section-title text-5xl md:text-6xl"
@@ -46,6 +17,11 @@ function Download() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              <img 
+                src={LOGO_URL} 
+                alt="N0ctOS Logo" 
+                className="w-[clamp(100px,100%,400px)] object-contain mx-auto mb-6 drop-shadow-[0_0_20px_rgba(139,92,246,0.5)]"
+              />
               Download{" "}
               <span className="bg-gradient-to-r from-accent to-primary-500 bg-clip-text text-transparent">
                 N0ctOS 2026
@@ -299,7 +275,6 @@ function Download() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

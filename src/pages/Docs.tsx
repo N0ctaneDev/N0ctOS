@@ -33,7 +33,6 @@ const docsSections = [
 ];
 
 function Docs() {
-  const particles = Array.from({ length: 25 }, (_, i) => ({ id: i }));
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter sections based on search query
@@ -47,34 +46,8 @@ function Docs() {
   })).filter((section) => section.items.length > 0);
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-tektur flex flex-col">
-      {/* Particle Background */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary-500 rounded-full opacity-20"
-            style={{
-              left: `${(particle.id * 17) % 100}%`,
-              top: `${(particle.id * 23) % 100}%`,
-            }}
-            animate={{
-              y: [0, -25, 0],
-              opacity: [0.1, 0.2, 0.1],
-            }}
-            transition={{
-              duration: 5 + (particle.id % 3),
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: particle.id * 0.1,
-            }}
-          />
-        ))}
-      </div>
-
-      <Navbar />
-      
-      <main className="pt-28 pb-20 px-4 flex-grow">
+    <div className=" text-white font-tektur flex flex-col">
+      <main className="flex-grow py-24">
         <div className="container max-w-6xl">
           {/* Header */}
           <motion.div
@@ -86,7 +59,7 @@ function Docs() {
             <img 
               src={LOGO_URL} 
               alt="N0ctOS Logo" 
-              className="w-16 h-16 object-contain mx-auto mb-6 drop-shadow-[0_0_20px_rgba(139,92,246,0.5)]"
+              className="w-[clamp(100px,100%,400px)] object-contain mx-auto mb-6 drop-shadow-[0_0_20px_rgba(139,92,246,0.5)]"
             />
             <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent">
               Documentation
@@ -209,8 +182,6 @@ function Docs() {
           </motion.div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

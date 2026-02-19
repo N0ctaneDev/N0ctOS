@@ -9,29 +9,29 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className="BAR fixed top-0 w-full bg-dark-primary/80 backdrop-blur-xl border-b border-primary-500/20 z-50"
+      className="BAR sticky top-0 w-full h-[clamp(50px,10dvh,100px)] bg-dark-primary/80 backdrop-blur-xl border-b border-primary-500/20 z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
-      <nav className="container py-4">
+      <nav className="flex py-1 px-[clamp(10px,10rem,20px)] justify-center content-center max-h-full">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
             transition={{
               type: "spring",
               stiffness: 400,
               damping: 25,
             }}
+            className="flex flex-grow-0 max-h-full"
           >
-            <Link to="/home" className="flex items-center gap-3">
+            <Link to="/home" className="flex items-center flex-grow-0 w-fit gap-3 max-h-full">
               <img 
                 src={LOGO_URL} 
                 alt="N0ctOS" 
-                className="w-20 h-20 object-contain"
+                className="object-contain max-h-full"
               />
-              <span className="text-xs text-primary-400 font-mono">
+              <span className="text-xs text-primary-400 font-mono object-contain">
                 v2026.1
               </span>
             </Link>
